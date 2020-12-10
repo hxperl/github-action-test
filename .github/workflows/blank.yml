@@ -15,8 +15,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install protoc
         run: |
-          if which protoc >/dev/null; then
-            echo "swift-protobuf가 이미 설치되어 있습니다."
-          else
-            echo "swift-protobuf를 설치합니다."
-            brew install swift-protobuf
+          chmod +x ./script/install-grpc.sh
+          sh ./script/install-grpc.sh
