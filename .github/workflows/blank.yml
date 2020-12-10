@@ -17,5 +17,7 @@ jobs:
         run: |
           chmod +x ./script/install-grpc.sh
           sh ./script/install-grpc.sh
-      - name: check result
-        run: echo `ls /usr/local/bin`
+      - name: Convert to Swift
+        run: sh ./script/convert-grpc-proto.sh
+      - name: Check result
+        run: echo `ls ./gRPC`
