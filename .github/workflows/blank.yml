@@ -17,3 +17,5 @@ jobs:
         run: |
           chmod +x ./script/install-grpc.sh
           sh ./script/install-grpc.sh
+      - name: check result
+        run: echo `ls /usr/local/bin`
