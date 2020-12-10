@@ -13,9 +13,10 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
+      - name: Install protoc
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          if which protoc >/dev/null; then
+            echo "swift-protobuf가 이미 설치되어 있습니다."
+          else
+            echo "swift-protobuf를 설치합니다."
+            brew install swift-protobuf
